@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radha Contact</title> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesabout.css">
+    <script defer src="scriptabout.js"></script>
+
+    <style>
+        .custom-padding {
+    padding-top: 80px; /* or margin-top: 50px; */
+}
+        .contact-info {
+            font-size: 30px;
+            margin: 20px 0;
+            margin-top: 100px;
+        }
+        .map-container {
+    width: 70%;
+    height: 400px;
+    margin: 20px auto; /* Changed to auto for left and right margins */
+    border: 1px solid #ddd;
+}
+        .feedback-form {
+            margin-top: 30px;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .feedback-form h4 {
+            margin-bottom: 20px;
+        }
+        .form-control {
+            border-radius: 0.25rem;
+        }
+        .btn-primary {
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<nav class="navbar navbar-expand-lg custom-navbar-new">
+    <div class="container-fluid">
+        <a class="navbar-brand navbar-brand-new" href="index.html">
+            <img src="MEDIA/RADHA LOGO.jpeg" alt="Company Logo" class="logo logo-new" style="width: 220px; height: auto;"> Radha Construction Co.
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav navbar-nav-new">
+                <li class="nav-item"><a class="nav-link nav-link-new" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-new" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-new" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-new" href="contact.html">Contact</a></li>
+                <a href="arabicindex.html" class="Arabic text-light mr-4 btn btn-primary" role="button">عربي</a>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Contact Section -->
+<section class="contact-section text-center py-5 bg-light">
+    <div class="container" style="margin-top: 50px;">
+        <h2 class="display-5">Building Your Vision Together</h2>
+        <p class="lead">Reach out to us and let’s create something extraordinary!</p>
+
+        <!-- Location Details -->
+        <div class="contact-info">
+            <h4>Contact Details</h4>
+            <p><strong>Address:</strong>Al-Barkat Street,Al-Hail,Muscat </p>
+            <p>
+                <strong>Phone:</strong> 📱<br>
+                <span><strong>Managing Director:</strong> +968 9980 2340</span><br>
+                <span><strong>Office:</strong> +968 7744 3018</span>
+            </p>
+            <p><strong>Email:</strong> <a href="info@radhaconstructionco.com">info@radhaconstructionco.com</a></p>
+        </div>
+    </div>
+</section>
+
+<!-- Google Map Embed -->
+<div class="map-container">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10045.881456213058!2d58.1895346!3d23.6291732!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e8c7c68c9b9e9ed%3A0xc9fc7c2ee3d8b8d6!2sAl-Barkat%20Street%2C%20Al-Hail%2C%20Muscat%2C%20Oman!5e0!3m2!1sen!2sus!4v1634660797965!5m2!1sen!2sus" 
+        width="100%" 
+        height="400" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy"></iframe>
+</div>
+<p><a href="https://www.google.com/maps/dir/?api=1&destination=23.633267,58.209324" target="_blank" class="btn btn-secondary">Get Directions</a></p>
+
+
+
+<!-- User Feedback Form -->
+<div class="feedback-form">
+    <h4>We'd Love to Hear from You!</h4>
+    <form id="contactForm" onsubmit="return sendWhatsAppMessage()">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<!-- Footer with Admin Button and Drop Zone -->
+<footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2024 Radha Construction Co. All Rights Reserved.</p>
+    <button id="adminButton" class="admin-button">Admin</button>
+    <div id="dropZone" class="drop-zone" style="display: none;"> <!-- Initially hidden -->
+        <p>Drag and drop images here or click to upload</p>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+
+</body>
+</html>

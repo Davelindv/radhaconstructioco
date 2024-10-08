@@ -1,0 +1,359 @@
+/*about page html*/
+
+.custom-navbar-new {
+    position: fixed; /* Fix the navbar at the top */
+    top: 0; /* Position it at the top of the page */
+    left: 0; /* Align it to the left */
+    right: 0; /* Align it to the right */
+    z-index: 1020; /* Ensure it stays above other content but below the top bar */
+
+    background-color: #fdf036; /* Change this to your desired color */
+    padding: 0.5rem 0; /* Adjust the vertical padding to change the depth */
+    min-height: 80px; /* Set a minimum height for the navbar */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically center the items */
+    justify-content: space-between; /* Align items to have space between them */
+}
+
+.custom-navbar-new .navbar-brand-new {
+    color: #ffffff; /* Change the color of the brand name */
+    font-size: 1.75rem; /* Increase font size for visibility */
+    font-weight: bold; /* Make the text bold */
+    text-decoration: none; /* Remove underline */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for zoom effect and color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+}
+
+.custom-navbar-new .navbar-brand-new:hover {
+    transform: scale(1.1); /* Zoom in slightly on hover */
+    color: black; /* Change text color to black on hover */
+}
+
+.custom-navbar-new .logo-new {
+    height: 10px; /* Set the desired height for the logo */
+    width: auto; /* Maintain aspect ratio */
+    font-size: 50px;
+}
+
+.custom-navbar-new .navbar-nav-new {
+    display: flex; /* Use flexbox to arrange nav items in a single line */
+    align-items: center; /* Center items vertically */
+    margin-left: auto; /* Push nav items to the right */
+}
+
+.custom-navbar-new .navbar-nav-new .nav-link-new {
+    color: #3d3d3d; /* Change the color of the nav items */
+    font-size: 1.2rem; /* Adjust the font size for the navbar links */
+    line-height: 1.5; /* Adjust line height for spacing */
+    padding: 0.5rem 1rem; /* Adjust padding for spacing around links */
+    transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease; /* Smooth transition for hover effect */
+    border: 2px solid transparent; /* Add a transparent border by default */
+    border-radius: 5px; /* Round corners for a modern look */
+}
+
+.custom-navbar-new .navbar-nav-new .nav-link-new:hover {
+    color: #5f5f5d; /* Change color on hover for a modern effect */
+    background-color: rgba(255, 255, 255, 0.2); /* Background color on hover */
+    border: 2px solid #4b4b49; /* Change border color on hover */
+}
+
+
+/*///////////////////////////////////*/
+body {
+    margin: 0; /* Reset default margin */
+    padding: 0; /* Reset default padding */
+}
+
+/* Hero Section */
+.hero-about {
+    position: relative; /* Enable absolute positioning for the image */
+    background: linear-gradient(135deg, #007acc 0%, #00c6ff 100%); /* Gradient background */
+    color: white; /* Text color */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    padding: 30px 20px; /* Reduced padding around the content */
+    margin-top: 80px;
+    overflow: hidden; /* Hide overflow for animation effect */
+}
+
+.container-about {
+    max-width: 700px; /* Limit the width of the text container */
+    z-index: 1; /* Ensure the text is above the image */
+    text-align: center; /* Center text inside the container */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Text hover effect */
+.container-about:hover {
+    transform: scale(1.05); /* Scale text container on hover */
+}
+
+/* Animation for text on page load */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px); /* Start slightly higher */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at original position */
+    }
+}
+
+/* Enhanced animations */
+@keyframes swing {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(10deg); /* Swing effect */
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); /* Pulse effect */
+    }
+}
+
+@keyframes fadeAndSlide {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px); /* Start from the left */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* End at original position */
+    }
+}
+
+/* Company name styles */
+.company-name-about {
+    font-size: 3rem; /* Adjust font size for company name */
+    margin: 0; /* Remove default margin */
+    animation: fadeAndSlide 0.8s ease forwards, pulse 1s ease forwards 5s, swing 1s ease forwards 10s; /* Apply animations */
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+    overflow: hidden; /* Hide overflow to prevent clipping */
+    text-overflow: ellipsis; /* Show ellipsis if text overflows */
+}
+
+/* Slogan styles */
+.slogan-about {
+    font-size: 1.5rem; /* Adjust font size for the slogan */
+    margin: 10px 0 0; /* Add margin to the top only */
+    animation: fadeAndSlide 0.8s ease forwards 0.2s, pulse 1s ease forwards 5.2s, swing 1s ease forwards 10.2s; /* Apply animations with delays */
+}
+
+
+
+
+
+
+/* Zigzag Card Section */
+.zigzag-cards-about {
+    padding: 50px 0;
+    background-color: #f4f4f4; /* Light background for contrast */
+}
+
+.zigzag-cards-about .container-about {
+    max-width: 1200px; /* Max width for better alignment */
+    margin: auto; /* Center the container */
+}
+
+/* Individual Card Style */
+.zigzag-card-about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for hover effects */
+    opacity: 0; /* Initially invisible */
+    
+}
+
+/* Image style with animation */
+.zigzag-card-about img {
+    width: 100%;
+    border-radius: 8px;
+    max-height: 300px; /* Limit the image height */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+/* Content styles */
+.zigzag-card-about .content-about {
+    font-size: 4.0rem; /* Increased font size for content */
+    color: #555; /* Darker text for better readability */
+    text-align: left;
+    line-height: 1.8; /* Improved line height for readability */
+}
+
+/* Hover effects */
+.zigzag-card-about:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+}
+
+/* Heading styles */
+.zigzag-card-about h4 {
+    font-size: 2.25rem; /* Increased font size for headings */
+    font-family: 'Arial', sans-serif; /* Custom font for headings */
+    color: #007bff;
+    margin-bottom: 15px;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Change heading color on hover */
+.zigzag-card-about h4:hover {
+    color: #0056b3; /* Darker color on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .zigzag-card-about {
+        flex-direction: column; /* Stack elements on smaller screens */
+        align-items: center; /* Center align for smaller screens */
+    }
+
+    .zigzag-card-about img {
+        width: 80%; /* Limit image width on mobile */
+    }
+}
+
+/* Animation for the card effect */
+@keyframes push-zoom {
+    0% {
+        transform: scale(0.9) translateY(20px); /* Start with zoom and push */
+        opacity: 0; /* Initially invisible */
+    }
+    100% {
+        transform: scale(1) translateY(0); /* End at original position and size */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* Class to trigger animation */
+.card-animate {
+    animation: push-zoom 0.6s ease forwards; /* Animation for cards */
+}
+
+/* Adjust card animation delay based on their order */
+.zigzag-card-about:nth-child(1) { animation-delay: 0.1s; }
+.zigzag-card-about:nth-child(2) { animation-delay: 0.2s; }
+.zigzag-card-about:nth-child(3) { animation-delay: 0.3s; }
+.zigzag-card-about:nth-child(4) { animation-delay: 0.4s; }
+/* Add more delays for additional cards if necessary */
+
+
+
+
+/* Service Card Styles */
+.service-card {
+    background: linear-gradient(145deg, #5faffa, #e6e6e6); /* Subtle gradient background */
+    border: 1px solid #ffda09; /* Border for better separation */
+    border-radius: 12px; /* Rounded corners for a softer look */
+    padding: 20px; /* Padding around content */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+    margin-bottom: 30px; /* Space between cards */
+    text-align: center; /* Center text */
+    opacity: 0; /* Start with opacity 0 for animation */
+    transform: translateY(20px); /* Start slightly below for animation */
+    animation: fadeIn 0.5s forwards; /* Apply fade-in animation */
+}
+
+/* Image styles */
+.service-card img {
+    border-radius: 12px; /* Rounded corners for images */
+    max-height: 200px; /* Limit image height */
+    object-fit: cover; /* Cover image area */
+    transition: transform 0.3s; /* Smooth transition for image zoom effect */
+}
+
+/* Title styles */
+.service-card h3 {
+    margin-top: 15px; /* Space above title */
+    font-size: 1.6rem; /* Slightly larger title font size */
+    color: #333; /* Darker color for better visibility */
+}
+
+/* Description styles */
+.service-card p {
+    font-size: 1rem; /* Description font size */
+    color: #666; /* Description color */
+}
+
+/* Hover Effects */
+.service-card:hover {
+    transform: translateY(-5px) scale(1.02); /* Lift the card slightly and zoom */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow effect on hover */
+}
+
+/* Image Hover Effect */
+.service-card img:hover {
+    transform: scale(1.05); /* Slight zoom effect on image hover */
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* Move to original position */
+    }
+}
+
+/* Delay animations for each service card */
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+.service-card:nth-child(4) { animation-delay: 0.4s; }
+.service-card:nth-child(5) { animation-delay: 0.5s; }
+.service-card:nth-child(6) { animation-delay: 0.6s; }
+.service-card:nth-child(7) { animation-delay: 0.7s; }
+
+/* Add a background effect */
+body {
+    background-color: #f0f2f5; /* Light gray background for the entire page */
+}
+
+/* Optional: Add some padding to the container holding the service cards */
+.service-container {
+    padding: 40px; /* Add some padding around the service cards */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the cards */
+}
+
+
+
+
+
+/* Contact Us Section */
+.contact-us {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.contact-us h2 {
+    font-size: 32px;
+    color: #212529;
+}
+
+.contact-us a {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 30px;
+    font-size: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.contact-us a:hover {
+    background-color: #0056b3;
+}

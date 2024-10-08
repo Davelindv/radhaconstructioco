@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesabout.css">
+
+    <script defer src="scriptabout.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-size: cover;
+            animation: changeBackground 12s infinite;
+        }
+
+        @keyframes changeBackground {
+            0% {
+                background: url('MEDIA/steelframes.jpg') no-repeat center center fixed;
+                background-size: cover;
+            }
+            45% {
+                background: url('MEDIA/whitesteel.jpg') no-repeat center center fixed;
+                background-size: cover;
+            }
+            60% {
+                background: url('MEDIA/pebimage4.jpg') no-repeat center center fixed;
+                background-size: cover;
+            }
+        }
+
+         /* Hero Section Styling */
+.hero-about {
+    background-color: #f0f0f0; /* Background color for the hero section */
+    padding: 50px 0; /* Add some padding to the top and bottom of the hero section */
+    text-align: center; /* Center all text inside the hero section */
+}
+
+.container-about {
+    margin-bottom: -40px; /* Adds space between each container-about div */
+    margin-top: -40px; /* Adds space between each container-about div */
+    padding: 20px; /* Adds padding inside each container-about div */
+}
+
+/* Styling for Text */
+.company-name-about {
+    font-size: 1.7rem; /* Reduce the font size of the main heading */
+    font-weight: bold; /* Make the text bold */
+}
+
+.slogan-about {
+    font-size: 1.2rem; /* Decrease the font size of the subheading */
+    font-weight: bold; /* Make the text bold */
+    color: #555; /* Optional: change text color to a grey shade */
+}      
+        
+    </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+
+
+  <nav class="navbar navbar-expand-lg custom-navbar-new">
+    <div class="container-fluid">
+        <a class="navbar-brand navbar-brand-new" href="index.html">
+            <img src="MEDIA/RADHA LOGO.jpeg" alt="Company Logo" class="logo logo-new" style="width: 220px; height: auto;"> Radha Construction Co.
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav navbar-nav-new">
+                <li class="nav-item"><a class="nav-link nav-link-new" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-new" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-new" href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-new" href="contact.html">Contact</a></li>
+                <a href="arabicindex.html" class="Arabic text-light mr-4 btn btn-primary" role="button">
+                    عربي
+                </a>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Hero Section -->
+<header class="hero-about">
+    <div class="container-about">
+        <h1 class="company-name-about">We are Registered and Approved</h1>
+        <p class="slogan-about">All Municipality in Sultanate Of Oman</p>
+    </div>
+
+    <div class="container-about">
+        <h4 class="company-name-about">MUSCAT MUNICIPALITY</h4>
+    </div>
+
+    <div class="container-about">
+        <h2 class="company-name-about">KHAZAEEN CITY</h2>
+    </div>
+
+    <div class="container-about">
+        <h2 class="company-name-about">MADAYAN</h2>
+    </div>
+
+    <div class="container-about">
+        <h2 class="company-name-about">SEZAD</h2>
+    </div>
+</header>
+
+
+<!-- Services Section -->
+<div class="container my-5">
+    <h2 class="text-center mb-4">Our Services</h2>
+    <div class="row">
+        <!-- Service 1 -->
+        <div class="col-md-4">
+            <div class="service-card" data-toggle="modal" data-target="#serviceModal1">
+                <img src="MEDIA/designbuild.jpg" alt="Service 1" class="img-fluid">
+                <h3 class="mt-3">Design And Build</h3>
+                <p>
+                    At Radha Construction Co., we take pride in offering a comprehensive approach to the design and construction of high-quality steel structures.
+                    <a href="#" data-toggle="modal" data-target="#serviceModal1">Click for more</a>
+                </p>
+            </div>
+        </div>
+        <!-- Service 2 -->
+        <div class="col-md-4">
+            <div class="service-card" data-toggle="modal" data-target="#serviceModal2">
+                <img src="MEDIA/peb.jpg" alt="Service 2" class="img-fluid">
+                <h3 class="mt-3">Design And Detailing of PEB</h3>
+                <p>At Radha Construction Co., we offer specialized services in the design and detailing of Pre-Engineered Buildings (PEB)</p>
+                <a href="#" data-toggle="modal" data-target="#serviceModal2">Click for more</a>
+            </div>
+        </div>
+        <!-- Service 3 -->
+        <div class="col-md-4">
+            <div class="service-card" data-toggle="modal" data-target="#serviceModal3">
+                <img src="MEDIA/steelframes.jpg" alt="Service 3" class="img-fluid">
+                <h3 class="mt-3">Design And Detailing of Structural Steel</h3>
+                <p>At Radha Construction Co., we excel in the design and detailing of structural steel, ensuring that every project meets the highest standards of quality, safety, and functionality.</p>
+                <a href="#" data-toggle="modal" data-target="#serviceModal3">Click for more</a>
+            </div>
+        </div>
+        <!-- Service 4 -->
+        <div class="col-md-4">
+            <div class="service-card" data-toggle="modal" data-target="#serviceModal4">
+                <img src="MEDIA/sitesupervision.jpg" alt="Service 4" class="img-fluid">
+                <h3 class="mt-3">Site Supervision</h3>
+                <p>At Radha Construction Co., our site supervision services ensure that every aspect of your construction project is executed with the utmost precision, quality, and safety.</p>
+                <a href="#" data-toggle="modal" data-target="#serviceModal4">Click for more</a>
+            </div>
+        </div>
+        <!-- Service 5 -->
+        <div class="col-md-4">
+            <div class="service-card" data-toggle="modal" data-target="#serviceModal5">
+                <img src="MEDIA/quality.jpg" alt="Service 5" class="img-fluid">
+                <h3 class="mt-3">Consulting and Quality Check</h3>
+                <p>At Radha Construction Co., we understand that successful projects require more than just skilled labor and quality materials;</p>
+                <a href="#" data-toggle="modal" data-target="#serviceModal5">Click for more</a>
+            </div>
+        </div>
+        <!-- Service 6 -->
+        <div class="col-md-4">
+            <div class="service-card" data-toggle="modal" data-target="#serviceModal6">
+                <img src="MEDIA/shop drwaing.png" alt="Service 6" class="img-fluid">
+                <h3 class="mt-3">Steel Shop Drawing and Detailing</h3>
+                <p>At Radha Construction Co., we recognize the critical role that precise shop drawings and detailing play in the successful fabrication and installation of steel structures.</p>
+                <a href="#" data-toggle="modal" data-target="#serviceModal6">Click for more</a>
+            </div>
+        </div>
+        <!-- Service 7 -->
+        <div class="col-md-4">
+            <div class="service-card" data-toggle="modal" data-target="#serviceModal7">
+                <img src="MEDIA/approval.jpg" alt="Service 7" class="img-fluid">
+                <h3 class="mt-3">Approvals</h3>
+                <p> At Radha Construction Co., we understand the importance of obtaining timely and accurate approvals for all projects.</p>
+                <a href="#" data-toggle="modal" data-target="#serviceModal7">Click for more</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modals for Each Service -->
+<!-- Service 1 Modal -->
+<div class="modal fade" id="serviceModal1" tabindex="-1" role="dialog" aria-labelledby="serviceModalLabel1" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="serviceModalLabel1">Design And Build Cont...</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Our design process is rooted in innovation, technical expertise, and a deep understanding of our clients' unique needs. Whether you're embarking on a project to build industrial warehouses, commercial buildings, or large-scale infrastructure, our team of skilled engineers, architects, and designers ensures that every structure is tailored to perfection, with attention to both functionality and aesthetics.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Repeat modal structure for other services -->
+<div class="modal fade" id="serviceModal2" tabindex="-1" role="dialog" aria-labelledby="serviceModalLabel2" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="serviceModalLabel2">Design And Detailing of PEB</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Our expert team of engineers ensures that every PEB structure is tailored to meet the specific needs of each project, offering a perfect balance of efficiency, durability, and cost-effectiveness. Key features of our PEB design and detailing services:</p>
+                <ul>
+                    <li><strong>Custom Engineering:</strong> Tailored designs that meet specific project requirements.</li>
+                    <li><strong>Material Optimization:</strong> Maximizing material efficiency for cost and sustainability.</li>
+                    <li><strong>Detailed Fabrication Drawings:</strong> Precise and accurate details for every structural component.</li>
+                    <li><strong>Speed and Efficiency:</strong> Fast-track solutions for project completion without compromising quality.</li>
+                    <li><strong>Structural Integrity:</strong> High standards of safety and performance for long-lasting durability.</li>
+                </ul>
+                <p>By choosing our PEB design and detailing services, you are ensured a reliable, efficient, and cost-effective building solution, designed to withstand the test of time and operational demands.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="serviceModal3" tabindex="-1" role="dialog" aria-labelledby="serviceModalLabel3" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="serviceModalLabel3">Design And Detailing of Structural Steel</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h3>Design And Detailing of Structural Steel</h3>
+                <p>
+                    At Radha Construction Co., our experienced team of structural engineers utilizes the latest technology and best practices to provide innovative solutions tailored to your specific needs.
+                </p>
+                <h4>Key Features of Our Structural Steel Design and Detailing Services:</h4>
+                <ul>
+                    <li>
+                        <strong>Comprehensive Analysis:</strong> 
+                        We conduct thorough structural analyses to ensure optimal performance under various load conditions, ensuring that your structures are safe and resilient.
+                    </li>
+                    <li>
+                        <strong>Custom Design Solutions:</strong> 
+                        Each project is unique; our designs are tailored to meet the specific requirements of your project, including architectural preferences, budget constraints, and environmental considerations.
+                    </li>
+                    <li>
+                        <strong>Accurate Detailing:</strong> 
+                        Our detailing services include precise and detailed drawings that capture every aspect of the steel structure, facilitating accurate fabrication and assembly.
+                    </li>
+                    <li>
+                        <strong>Material Efficiency:</strong> 
+                        We emphasize the use of high-strength materials and efficient designs to reduce waste, minimize costs, and promote sustainability.
+                    </li>
+                    <li>
+                        <strong>Collaboration with Stakeholders:</strong> 
+                        Our team works closely with architects, contractors, and other stakeholders to ensure seamless integration of the structural steel components into the overall project design.
+                    </li>
+                    <li>
+                        <strong>Compliance and Quality Assurance:</strong> 
+                        All designs adhere to industry standards and local building codes, ensuring that your project meets regulatory requirements and performs as intended.
+                    </li>
+                    <li>
+                        <strong>Innovative Solutions:</strong> 
+                        We leverage advanced software and design tools to create effective and innovative solutions that enhance the functionality and aesthetic appeal of your structures.
+                    </li>
+                </ul>
+                <p>
+                    By choosing Radha Construction Co. for your structural steel design and detailing needs, you are investing in a partner committed to delivering exceptional quality and value, ensuring that your project stands the test of time.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="serviceModal4" tabindex="-1" role="dialog" aria-labelledby="serviceModalLabel4" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="serviceModalLabel4">Site Supervision</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h2>Site Supervision</h2>
+                <p>
+                    Our experienced site supervisors play a vital role in overseeing the construction process, ensuring that the project runs smoothly from start to finish.
+                </p>
+                
+                <h3>Key Features of Our Site Supervision Services:</h3>
+                
+                <ul>
+                    <li>
+                        <strong>Continuous Monitoring:</strong> Our site supervisors conduct regular inspections and assessments throughout the construction process to guarantee compliance with project specifications and safety regulations. This continuous oversight helps identify potential issues early on, allowing for timely interventions.
+                    </li>
+                    <li>
+                        <strong>Quality Control:</strong> We implement rigorous quality control measures, ensuring that all materials, workmanship, and processes meet industry standards and client expectations. Our supervisors maintain high-quality benchmarks to deliver exceptional results.
+                    </li>
+                    <li>
+                        <strong>Project Coordination:</strong> Our supervisors facilitate effective communication and coordination among various stakeholders, including contractors, subcontractors, and suppliers. This collaboration ensures that everyone is aligned and that the project executes seamlessly.
+                    </li>
+                    <li>
+                        <strong>Safety Management:</strong> Safety is our top priority. We enforce strict safety protocols and conduct regular training sessions for all personnel on-site to minimize risks and ensure a safe working environment.
+                    </li>
+                    <li>
+                        <strong>Progress Tracking:</strong> We maintain detailed records of construction progress, identifying potential delays and taking proactive measures to keep the project on schedule. Our supervisors use established timelines to monitor advancements and milestones effectively.
+                    </li>
+                    <li>
+                        <strong>Reporting and Documentation:</strong> Comprehensive reporting and documentation are integral to our site supervision services. We provide transparent records of all activities performed on-site, ensuring accountability and clarity throughout the construction process.
+                    </li>
+                    <li>
+                        <strong>Problem-Solving:</strong> Our experienced supervisors are adept at identifying and resolving any issues that may arise during construction. They are trained to think critically and provide effective solutions, ensuring that your project remains on track and meets its objectives.
+                    </li>
+                </ul>
+            
+                <p>
+                    By choosing Radha Construction Co. for your site supervision needs, you are investing in a dedicated team committed to delivering exceptional oversight. Our goal is to ensure that your project is completed efficiently, safely, and to the highest standards of quality.
+                </p>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="serviceModal5" tabindex="-1" role="dialog" aria-labelledby="serviceModalLabel5" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="serviceModalLabel5">Consulting and Quality Check</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h2>Consulting and Quality Check</h2>
+                <p>
+                    Our consulting services are designed to guide you through the complexities of construction projects, ensuring that all aspects are handled professionally and efficiently.
+                </p>
+                
+                <h3>Key Features of Our Consulting and Quality Check Services:</h3>
+                
+                <ul>
+                    <li>
+                        <strong>Expert Guidance:</strong> Our team of experienced consultants provides valuable insights and recommendations throughout the project lifecycle, helping you make informed decisions that align with your goals and budget.
+                    </li>
+                    <li>
+                        <strong>Project Feasibility Studies:</strong> We conduct thorough feasibility studies to assess project viability, identifying potential challenges and opportunities before construction begins.
+                    </li>
+                    <li>
+                        <strong>Regulatory Compliance:</strong> We ensure that all project designs and executions comply with local regulations and industry standards, minimizing risks and avoiding costly delays.
+                    </li>
+                    <li>
+                        <strong>Quality Assurance Procedures:</strong> Our quality assurance protocols include systematic checks and evaluations of materials, workmanship, and processes to guarantee that they meet our high standards and your expectations.
+                    </li>
+                    <li>
+                        <strong>Performance Evaluations:</strong> We perform regular performance evaluations during construction to monitor progress and quality, ensuring that any issues are promptly addressed.
+                    </li>
+                    <li>
+                        <strong>Final Quality Checks:</strong> Before project completion, we conduct comprehensive final inspections to confirm that all aspects of the construction meet our quality criteria and client specifications.
+                    </li>
+                    <li>
+                        <strong>Post-Construction Support:</strong> Our commitment to quality extends beyond project completion. We offer post-construction support to address any concerns and ensure lasting satisfaction with the final product.
+                    </li>
+                </ul>
+            
+                <p>
+                    By choosing Radha Construction Co. for your consulting and quality check needs, you gain a partner dedicated to delivering excellence and ensuring the success of your project from start to finish.
+                </p>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="serviceModal6" tabindex="-1" role="dialog" aria-labelledby="serviceModalLabel6" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="serviceModalLabel6">Steel Shop Drawing and Detailing</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h2>Steel Shop Drawing and Detailing</h2>
+                <p>
+                     Our dedicated team of detailers and engineers uses advanced technology and industry best practices to create accurate, detailed shop drawings tailored to your project’s specifications.
+                </p>
+                
+                <h3>Key Features of Our Steel Shop Drawing and Detailing Services:</h3>
+                
+                <ul>
+                    <li>
+                        <strong>Accurate Shop Drawings:</strong> We provide highly accurate shop drawings that reflect the dimensions, connections, and specifications required for the successful fabrication of steel components.
+                    </li>
+                    <li>
+                        <strong>3D Modeling:</strong> Utilizing advanced 3D modeling software, we create detailed models that visualize the entire steel structure, aiding in coordination and identifying potential clashes before fabrication begins.
+                    </li>
+                    <li>
+                        <strong>Material Specifications:</strong> Our drawings include detailed material specifications to ensure that the right materials are used for the project, enhancing quality and performance.
+                    </li>
+                    <li>
+                        <strong>Collaboration with Fabricators:</strong> We work closely with fabricators to ensure our drawings are clear and comprehensive, minimizing misunderstandings and facilitating efficient fabrication.
+                    </li>
+                    <li>
+                        <strong>Revisions and Updates:</strong> We accommodate necessary revisions throughout the project lifecycle, ensuring that any changes are accurately reflected in the shop drawings.
+                    </li>
+                    <li>
+                        <strong>Comprehensive Detailing:</strong> Our detailing services cover all aspects of the steel structure, including connections, dimensions, and fabrication instructions, ensuring every detail is accounted for.
+                    </li>
+                    <li>
+                        <strong>Quality Control:</strong> Each shop drawing undergoes a rigorous quality control process to verify accuracy and compliance with project requirements and industry standards.
+                    </li>
+                </ul>
+            
+                <p>
+                    By choosing Radha Construction Co. for your steel shop drawing and detailing needs, you ensure a smooth transition from design to fabrication, reducing delays and enhancing the overall quality of your project.
+                </p>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="serviceModal7" tabindex="-1" role="dialog" aria-labelledby="serviceModalLabel7" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="serviceModalLabel7">Service Title 7</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h2>Approvals</h2>
+                <p>
+                   Our team is experienced in navigating the approval process with local authorities and regulatory bodies to ensure compliance with all necessary codes and standards.
+                </p>
+            
+                <h3>Key Features of Our Approval Services:</h3>
+            
+                <ul>
+                    <li><strong>Comprehensive Documentation:</strong> We prepare and submit all required documents to facilitate a smooth approval process.</li>
+                    <li><strong>Regulatory Compliance:</strong> Our team ensures that all designs meet local building codes and regulations.</li>
+                    <li><strong>Timely Follow-Up:</strong> We proactively follow up with authorities to expedite the approval process.</li>
+                </ul>
+            
+                <p>
+                    By partnering with us, you can ensure that your project meets all necessary approvals, allowing for a seamless construction process.
+                </p>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+ <!-- Contact Section -->
+ <section class="contact-section text-center py-5 bg-light">
+    <div class="container">
+        <h2 class="display-5">Your Project Deserves the Best</h2>
+        <p class="lead">Join Us in Crafting Excellence and Innovation!</p>
+        <a href="Contact.html" class="btn btn-primary btn-lg">Contact Us</a>
+    </div>
+</section>
+    
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Radha Construction Co. All Rights Reserved.Dave</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

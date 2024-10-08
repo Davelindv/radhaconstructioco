@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radha Gallery</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesabout.css">
+    <script defer src="scriptabout.js"></script>
+
+    <style>
+        body {
+            background-color: #2c2c2c; /* Dark background */
+        }
+        .gallery {
+            margin-top: 50px;
+        }
+        .card {
+            transition: transform 0.5s, box-shadow 0.5s; /* Smooth transform and shadow */
+            opacity: 0;
+            transform: translateY(20px); /* Start slightly lower */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+        .card:hover {
+            transform: scale(1.05); /* Scale up on hover */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Add shadow on hover */
+        }
+        .card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .load-more {
+            margin: 20px auto;
+        }
+        .drop-zone {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 2px dashed #ccc;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 0.3s; /* Fade in/out effect */
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .lightbox:target {
+            display: flex; /* Show lightbox when targeted */
+        }
+        .lightbox .description {
+            position: absolute;
+            bottom: 20px;
+            color: white;
+            text-align: center;
+            font-size: 18px;
+            width: 100%;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<nav class="navbar navbar-expand-lg custom-navbar-new">
+    <div class="container-fluid">
+        <a class="navbar-brand navbar-brand-new" href="index.html">
+            <img src="MEDIA/RADHA LOGO.jpeg" alt="Company Logo" class="logo logo-new" style="width: 220px; height: auto;"> Radha Construction Co.
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav navbar-nav-new">
+                <li class="nav-item"><a class="nav-link nav-link-new" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-new" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-new" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-new" href="contact.html">Contact</a></li>
+                <a href="arabicindex.html" class="Arabic text-light mr-4 btn btn-primary" role="button">
+                    عربي
+                </a>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Gallery Section -->
+<section class="gallery text-center py-5">
+    <div class="container">
+        <h2 class="text-white">Our Gallery</h2>
+        <div class="row" id="galleryContainer">
+            <!-- Image Cards will be inserted here -->
+        </div>
+        <button id="loadMore" class="btn btn-primary load-more">Load More</button>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section text-center py-5 bg-light">
+    <div class="container">
+        <h2 class="display-5">Your Project Deserves the Best</h2>
+        <p class="lead">Join Us in Crafting Excellence and Innovation!</p>
+        <a href="Contact.html" class="btn btn-primary btn-lg">Contact Us</a>
+    </div>
+</section>
+
+<!-- Lightbox for full-screen image view -->
+<div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img id="lightboxImage" src="" alt="Full Size Image">
+    <div class="description" id="lightboxDescription"></div>
+</div>
+
+<!-- Footer with Admin Button and Drop Zone -->
+<footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2024 Radha Construction Co. All Rights Reserved.</p>
+    <button id="adminButton" class="admin-button">Admin</button>
+    <div id="dropZone" class="drop-zone" style="display: none;"> <!-- Initially hidden -->
+        <p>Drag and drop images here or click to upload</p>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    const totalImages = 36; // Total number of images
+    const imagesPerLoad = 12; // Number of images to load at a time
+    const images = [
+        { src: 'MEDIA/image1.jpg', title: 'Image Title 1', description: 'Description for image 1.' },
+        { src: 'MEDIA/image2.jpg', title: 'Image Title 2', description: 'Description for image 2.' },
+        { src: 'MEDIA/image3.jpg', title: 'Image Title 3', description: 'Description for image 3.' },
+        { src: 'MEDIA/image4.jpg', title: 'Image Title 4', description: 'Description for image 4.' },
+        { src: 'MEDIA/image5.jpg', title: 'Image Title 5', description: 'Description for image 5.' },
+        { src: 'MEDIA/image6.jpg', title: 'Image Title 6', description: 'Description for image 6.' },
+        { src: 'MEDIA/image7.jpg', title: 'Image Title 7', description: 'Description for image 7.' },
+        { src: 'MEDIA/image8.jpg', title: 'Image Title 8', description: 'Description for image 8.' },
+        { src: 'MEDIA/image9.jpg', title: 'Image Title 9', description: 'Description for image 9.' },
+        { src: 'MEDIA/image10.jpg', title: 'Image Title 10', description: 'Description for image 10.' },
+        { src: 'MEDIA/image11.jpg', title: 'Image Title 11', description: 'Description for image 11.' },
+        { src: 'MEDIA/image12.jpg', title: 'Image Title 12', description: 'Description for image 12.' },
+        { src: 'MEDIA/image13.jpg', title: 'Image Title 13', description: 'Description for image 13.' },
+        { src: 'MEDIA/image14.jpg', title: 'Image Title 14', description: 'Description for image 14.' },
+        { src: 'MEDIA/image15.jpg', title: 'Image Title 15', description: 'Description for image 15.' },
+        { src: 'MEDIA/image16.jpg', title: 'Image Title 16', description: 'Description for image 16.' },
+        { src: 'MEDIA/image17.jpg', title: 'Image Title 17', description: 'Description for image 17.' },
+        { src: 'MEDIA/image18.jpg', title: 'Image Title 18', description: 'Description for image 18.' },
+        { src: 'MEDIA/image19.jpg', title: 'Image Title 19', description: 'Description for image 19.' },
+        { src: 'MEDIA/image20.jpg', title: 'Image Title 20', description: 'Description for image 20.' },
+        { src: 'MEDIA/image21.jpg', title: 'Image Title 21', description: 'Description for image 21.' },
+        { src: 'MEDIA/image22.jpg', title: 'Image Title 22', description: 'Description for image 22.' },
+        { src: 'MEDIA/image23.jpg', title: 'Image Title 23', description: 'Description for image 23.' },
+        { src: 'MEDIA/image24.jpg', title: 'Image Title 24', description: 'Description for image 24.' },
+        { src: 'MEDIA/image25.jpg', title: 'Image Title 25', description: 'Description for image 25.' },
+        { src: 'MEDIA/image26.jpg', title: 'Image Title 26', description: 'Description for image 26.' },
+        { src: 'MEDIA/image27.jpg', title: 'Image Title 27', description: 'Description for image 27.' },
+        { src: 'MEDIA/image28.jpg', title: 'Image Title 28', description: 'Description for image 28.' },
+        { src: 'MEDIA/image29.jpg', title: 'Image Title 29', description: 'Description for image 29.' },
+        { src: 'MEDIA/image30.jpg', title: 'Image Title 30', description: 'Description for image 30.' },
+        { src: 'MEDIA/image31.jpg', title: 'Image Title 31', description: 'Description for image 31.' },
+        { src: 'MEDIA/image32.jpg', title: 'Image Title 32', description: 'Description for image 32.' },
+        { src: 'MEDIA/image33.jpg', title: 'Image Title 33', description: 'Description for image 33.' },
+        { src: 'MEDIA/image34.jpg', title: 'Image Title 34', description: 'Description for image 34.' },
+        { src: 'MEDIA/image35.jpg', title: 'Image Title 35', description: 'Description for image 35.' },
+        { src: 'MEDIA/image36.jpg', title: 'Image Title 36', description: 'Description for image 36.' },
+    ];
+
+    let currentImageIndex = 0; // To track the currently displayed image
+
+    function loadImages() {
+        const galleryContainer = document.getElementById('galleryContainer');
+        const start = Math.min(currentImageIndex, totalImages);
+        const end = Math.min(currentImageIndex + imagesPerLoad, totalImages);
+        
+        for (let i = start; i < end; i++) {
+            const card = document.createElement('div');
+            card.className = 'col-md-4 mb-4';
+            card.innerHTML = `
+                <div class="card" onclick="openLightbox(${i})">
+                    <img src="${images[i].src}" class="card-img-top" alt="${images[i].title}">
+                    <div class="card-body">
+                        <h5 class="card-title">${images[i].title}</h5>
+                    </div>
+                </div>
+            `;
+            galleryContainer.appendChild(card);
+            setTimeout(() => {
+                card.querySelector('.card').classList.add('show'); // Animate cards in
+            }, (i - start) * 100); // Staggered animation
+        }
+
+        currentImageIndex += imagesPerLoad;
+
+        // Hide load more button if all images are loaded
+        if (currentImageIndex >= totalImages) {
+            document.getElementById('loadMore').style.display = 'none';
+        }
+    }
+
+    function openLightbox(index) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxDescription = document.getElementById('lightboxDescription');
+        lightboxImage.src = images[index].src;
+        lightboxDescription.innerText = images[index].description;
+        lightbox.style.display = 'flex'; // Show lightbox
+        currentImageIndex = index; // Update current index
+    }
+
+    function closeLightbox() {
+        const lightbox = document.getElementById('lightbox');
+        lightbox.style.display = 'none'; // Hide lightbox
+    }
+
+    function handleKeydown(event) {
+        if (event.key === 'Escape') {
+            closeLightbox();
+        } else if (event.key === 'ArrowRight') {
+            // Next image
+            if (currentImageIndex < totalImages - 1) {
+                openLightbox(currentImageIndex + 1);
+            }
+        } else if (event.key === 'ArrowLeft') {
+            // Previous image
+            if (currentImageIndex > 0) {
+                openLightbox(currentImageIndex - 1);
+            }
+        }
+    }
+
+    document.getElementById('loadMore').addEventListener('click', loadImages);
+    document.addEventListener('keydown', handleKeydown);
+    
+    // Load initial images on page load
+    loadImages();
+</script>
+
+</body>
+</html>
